@@ -1,0 +1,37 @@
+{
+  "name": "api-node-products-list",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node-dev src/server.ts --ignore _tests_",
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts --ignore _tests_",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "knex:migration": "knex --knexfile knexfile.ts migrate:latest --env development",
+    "pretest": "knex --knexfile knexfile.ts migrate:latest --env test",
+    "test": "jest",
+    "posttest": "knex --knexfile knexfile.ts migrate:rollback --all --env test"
+  },
+  "dependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/knex": "^0.16.1",
+    "@types/supertest": "^2.0.10",
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.12",
+    "mysql2": "^2.2.5",
+    "react-navigation": "^4.4.3",
+    "supertest": "^6.0.1",
+    "ts-jest": "^26.4.4",
+    "typeorm": "^0.2.29"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.8",
+    "@types/express": "^4.17.9",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.1.2"
+  }
+}
