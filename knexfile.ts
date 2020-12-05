@@ -20,9 +20,9 @@ export const test: Config = {
 export const development: Config = {
     client: 'mysql2',
     connection: {
-        host: '127.0.0.1',
-        user: 'root',
-        password: '123456',
+        host: 'mysql741.umbler.com',
+        user: 'joaogsdc',
+        password: 'a12345678',
         database: 'knex'
     },
     migrations: {
