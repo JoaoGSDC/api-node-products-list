@@ -8,9 +8,9 @@ export const index = async (req: Request, res: Response) => {
 }
 
 export const insert = async (req: Request, res: Response) => {
-    const { name } = req.body;
+    const { name, image } = req.body;
 
-    await knex('Categories').insert({ name });
+    await knex('Categories').insert({ name, image });
 
     const categories = await knex('Categories').select('*');
 
@@ -18,9 +18,9 @@ export const insert = async (req: Request, res: Response) => {
 }
 
 export const update = async (req: Request, res: Response) => {
-    const { id, name } = req.body;
+    const { id, name, image } = req.body;
 
-    await knex('Categories').where('id', '=', id).update({ name: name });
+    await knex('Categories').where('id', '=', id).update({ name, image });
 
     const categories = await knex('Categories').select('*');
 
