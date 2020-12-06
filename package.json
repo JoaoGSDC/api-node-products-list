@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "knex --knexfile knexfile.ts migrate:latest --env development | ts-node-dev src/server.ts --ignore _tests_",
+    "start": "knex --knexfile knexfile.ts migrate:rollback --all --env development | ts-node-dev src/server.ts --ignore _tests_",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts --ignore _tests_",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "knex:migration": "knex --knexfile knexfile.ts migrate:latest --env development",
